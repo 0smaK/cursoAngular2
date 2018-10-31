@@ -22,10 +22,16 @@ export class AppComponent {
 
   private productos: producto[] = [];
   private numItemsMarked: number = 0;
-  
+  errorProductoNombre: boolean = false;
+
 	addProducto(description: string){
-		this.productos.push({description, checked: false});
-		this.numItemsMarked += 1;
+    if(description.length!=0){
+      this.productos.push({description, checked: false});
+      this.numItemsMarked += 1;
+      this.errorProductoNombre = false;
+    }else{
+      this.errorProductoNombre = true;
+    }
 	}
 
 	marcar(value: number){
