@@ -1,0 +1,31 @@
+<div>
+  <h1>Listado de alumnos</h1>
+  <h3 *ngIf="numAlumnos==0; else tablaAlumnos">
+    No se ha recuperado ningún alumno
+  </h3>
+  <ng-template #tablaAlumnos>
+    <h3>--- {{numAlumnos}} alumno/s ---</h3>
+    <input #desc (keyup.enter)="searchAlumno(desc.value); desc.value=''" class="introducenombre" type="text" name="alumno"><button (click)="searchAlumno(desc.value); desc.value=''" class="iname">Buscar DNI</button>
+
+    <div class="tabla">
+    <table>
+      <tr>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Equipo</th>
+      </tr>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{alumno.DNI}}</td>
+        <td>{{alumno.Nombre}}</td>
+        <td>{{alumno.Apellidos}}</td>
+        <td>{{alumno.Direccion}}</td>
+        <td>{{alumno.Telefono}}</td>
+        <td>{{alumno.Equipo}}</td>
+      </tr>
+    </table>
+  </div>
+  </ng-template>
+</div>

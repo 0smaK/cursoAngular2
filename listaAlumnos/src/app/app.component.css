@@ -1,0 +1,59 @@
+* {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif}
+div {text-align: center}
+h1 {color: crimson}
+h3 {color: crimson; position:relative; top: -25px;}
+.introducenombre:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline:none;
+    border-bottom:2px solid crimson;
+}
+
+button.iname:focus{    -webkit-box-shadow: none;
+    box-shadow: none;outline:none; }
+
+
+
+
+.introducenombre{
+    text-align:right;
+    padding-right: 10px;
+    margin-top:20px;
+    height:31px;
+    width:250px;
+    border:none;
+    border-bottom:2px solid crimson;
+    color:crimson;
+    font-size: 20px;
+}
+
+button.iname{
+    background-color: crimson;
+    font-size: 20px;
+    height: 34px;
+    width: 150px;
+    color:white;
+    margin-right: 0;
+    border: none;
+    border-bottom: 3px solid crimson;
+    border-left: 3px solid crimson;
+}
+
+.tabla{
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top:30px;
+}
+
+th,td {
+    padding: 30px;
+    text-align:center;
+    border-bottom: 1px solid #ddd;
+}
+th,table{ color:crimson}
+td{ color: black;}
