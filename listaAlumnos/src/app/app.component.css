@@ -1,4 +1,5 @@
-* {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif}
+body{margin: 0;}
+* { font-family: 'Open Sans', sans-serif; }
 div {text-align: center}
 h1 {color: crimson}
 h3 {color: crimson; position:relative; top: -25px;}
@@ -40,14 +41,32 @@ button.iname{
     border-left: 3px solid crimson;
 }
 
+.limpiar{
+    background-color: crimson;
+    font-size: 20px;
+    height: 34px;
+    width: 150px;
+    color:white;
+    margin: 5;
+    border: none;
+    border-bottom: 3px solid crimson;
+    border-left: 3px solid crimson;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-top:20px;
+}
+
 .tabla{
-    margin-left:auto; 
-    margin-right:auto;
+    text-align: center;
 }
 
 table {
     border-collapse: collapse;
     margin-top:30px;
+    text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
 }
 
 th,td {
@@ -57,3 +76,23 @@ th,td {
 }
 th,table{ color:crimson}
 td{ color: black;}
+
+.errorDNI{
+    width: 100%;
+    bottom: 0%;
+    background-color:crimson;
+    text-align:center;
+    position:sticky;
+    height: 60px;
+    position:fixed;
+    padding-right:0;
+    padding-left:0;
+    margin:0;
+}
+.texto_error{
+    margin: 0 auto;
+    text-align:center;
+    color:white;
+    vertical-align: middle;
+    padding-top:20px;
+}

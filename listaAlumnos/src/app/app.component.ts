@@ -14,6 +14,8 @@ export class AppComponent {
 
 	private alumnos: Alumno[] = [];
 	private numAlumnos: number = 0;
+	private dniEncontrado: boolean = false;
+	private AlumnPos: number;
 
 	constructor(private http: HttpClient) { 
 		this.getAlumnos();
@@ -28,5 +30,15 @@ export class AppComponent {
 			},
 			error => console.error(error)
 		);
+		
+	}
+
+	private searchAlumno(dni: string) {
+		this.dniEncontrado = false;
+		for(let i=0; i<this.numAlumnos-1;i++)
+			if(dni===this.alumnos[i].DNI){
+				this.dniEncontrado = true;
+				this.AlumnPos = i;
+			}
 	}
 }

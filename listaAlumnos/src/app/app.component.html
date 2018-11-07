@@ -4,11 +4,11 @@
     No se ha recuperado ningún alumno
   </h3>
   <ng-template #tablaAlumnos>
-    <h3>--- {{numAlumnos}} alumno/s ---</h3>
-    <input #desc (keyup.enter)="searchAlumno(desc.value); desc.value=''" class="introducenombre" type="text" name="alumno"><button (click)="searchAlumno(desc.value); desc.value=''" class="iname">Buscar DNI</button>
+    <h3>Existen {{numAlumnos-1}} alumnos</h3>
+    <input #desc (keyup.enter)="searchAlumno(desc.value);" class="introducenombre" type="text" name="alumno"><button (click)="searchAlumno(desc.value)" class="iname">Buscar DNI</button>
 
     <div class="tabla">
-    <table>
+    <table *ngIf="desc.value==''">
       <tr>
         <th>DNI</th>
         <th>Nombre</th>
@@ -26,6 +26,37 @@
         <td>{{alumno.Equipo}}</td>
       </tr>
     </table>
+
+    <table *ngIf="dniEncontrado==true"> 
+        <tr>
+          <th>DNI</th>
+          <td>{{alumnos[AlumnPos].DNI}}</td>
+        </tr>
+        <tr>
+            <th>Nombre</th>
+            <td>{{alumnos[AlumnPos].Nombre}}</td>
+        </tr>
+        <tr>
+            <th>Apellidos</th>
+            <td>{{alumnos[AlumnPos].Apellidos}}</td>
+        </tr>
+        <tr>
+            <th>Direccion</th>
+            <td>{{alumnos[AlumnPos].Direccion}}</td>
+        </tr>
+        <tr>
+            <th>Teléfono</th>
+            <td>{{alumnos[AlumnPos].Telefono}}</td>
+        </tr>
+        <tr>
+            <th>Equipo</th>
+            <td>{{alumnos[AlumnPos].Equipo}}</td>
+        </tr>        
+    </table>
+    <button *ngIf="desc.value!=''" class="limpiar" (click)="desc.value=''; dniEncontrado=false;">Limpiar</button>
+
+    
   </div>
+  <div *ngIf="dniEncontrado==false && desc.value!=''" (click)="desc.value=''" class="errorDNI"><div class="texto_error">¡El DNI introducido ({{desc.value}}) no existe en nuestra lista de alumnos!</div></div>
   </ng-template>
 </div>
